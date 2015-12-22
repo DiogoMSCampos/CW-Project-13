@@ -10,7 +10,5 @@ server.route({
 server.route({
   method: 'POST',
   path: '/hello',
-  handler: resources.hello.post // é definido no outro ficheiro
+  handler: resources.hello.post
 })
-
-//caminha entre a DB e a interface

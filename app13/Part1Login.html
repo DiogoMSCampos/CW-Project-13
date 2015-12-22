@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+	<meta name="Group13" content="WC project">
+		
+	<title>MedicalSystem_app</title>
+		
+	<!--load do Angular js script -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src ="InSureApp.js"></script>
+		
+	<!-- para usar o Bootstrap remoto -->
+	<link href="http://alfredoferreira.eu/cw/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://alfredoferreira.eu/cw/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="http://alfredoferreira.eu/cw/css/theme.css" rel="stylesheet">
+
+</head>
+	
+<body>
+    
+<!-- Part1 -->
+	<!-- nao sei se isto é tudo necessário ng-app é para dizer q é diretiva do angular js
+		o ng-init inicializa a variavel da aplicacao no angular js -->	
+	<div ng-app="InSureApp" data-ng-controller="cwCtrl" ng-init="cwSwitch=false"> 
+			
+	<div class="row">
+	
+	<div class="col-sm-4">  </div>
+			
+	<div class="col-sm-4">
+			
+		<div class="panel panel-info" >
+				
+			<div class="panel-heading text-center">
+									
+				<img src="icon1.jpg" class="img-rounded" width="150" height="150">
+				<p></p>
+				<div class="media-body">
+				<p> <h1 class="media-heading"> <b> InSure </b> </h1> </p>
+				<p> <h4> MedicalCare System </h4> </p>
+				
+				</div>
+							
+			</div>
+			
+		<p></p>
+					
+		<form name="loginForm" class="form-horizontal" role="form">
+				
+			<div class="form-group">
+				<label class="control-label col-sm-2">Doctor ID:</label>		
+				<div class="col-sm-9">		
+					<input type="text" class="form-control" name="docID" placeholder="Enter ID" data-ng-model="user.docID" required>							
+						<span style="color:red" ng-show="loginForm.docID.$dirty && loginForm.docID.$invalid"> 
+							<span ng-show="loginForm.docID.$error.required"> ID required. </span>
+						</span>			
+				</div>
+			</div>
+			  
+			<div class="form-group">
+				<label class="control-label col-sm-2 ">Password:</label>
+				<div class="col-sm-9"> 
+					<input type="password" class="form-control" name="pwd" placeholder="Enter password" data-ng-model="user.pwd" required>
+						<span style="color:red" ng-show="loginForm.pwd.$dirty && loginForm.pwd.$invalid"> 
+							<span ng-show="loginForm.pwd.$error.required"> Forgot your password? </span>
+						</span>	
+				</div>
+			</div>		
+				
+			<!-- pomos isto ou nao??!-->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-8 text-center">
+					<div class="checkbox">
+						<label><input type="checkbox"> Remember me</label>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-8 text-center">
+					<button type="submit" class="btn btn-default" onclick="location.href='part2.html'">Login</button> 					
+				</div>
+			</div>
+		
+		</form> 
+	
+		</div>
+	
+	</div> 		
+	
+	<div class="col-sm-4">  </div>                 
+		 
+    </div>
+	</div>
+			
+</body>
+</html>

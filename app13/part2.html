@@ -1,0 +1,157 @@
+<html>
+<!--part2-->
+	<head>
+	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="Group" content="WC project">
+		
+		<title>MedicalSystem_app</title>
+		
+		<!-- ver para o que isto serve ?? -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src ="cwApp.js"></script>
+		
+		<!-- para usar o Bootstrap remoto -->
+		<link href="http://alfredoferreira.eu/cw/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://alfredoferreira.eu/cw/css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="http://alfredoferreira.eu/cw/css/theme.css" rel="stylesheet">
+	
+	</head>
+<body>
+	
+			
+<div ng-app="myApp" ng-controller="customersCtrl">
+<link rel="stylesheet" type="text/css" />
+<!-- cabeçalho-->
+<div class="panel panel-info" >
+		<div class="panel-heading text-center">
+				<div class="row">
+				<div class="col-md-2">
+					<table>
+						<tr>
+							<td> <img src="icon1.jpg" class="img-rounded" width="100" height="100"> </td>
+							<td> <h1 class="media-heading" style="float: 0; margin: 10 ;"> <b> MedicalCare System </b> </h1>  </td>
+						</tr> 
+					</table>   
+				</div>
+			<table align="right">
+			<div class="col-md-3" >
+				<tr>
+					<td rowspan="2">
+					<img src="foto.jpg" class="img-rounded" width="100" height="100">
+					</td>
+					<td>
+						<p><h3 class="media-heading" style="float: 0; margin: 10;">Dr. Smith</h3></p>
+					</td>
+					<td>
+						<p><button type="submit" class="btn btn-default">Home</button></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p><h5 class="media-heading" style="float:0; margin:10;">Family/Internal Medicine</h5></p>
+					</td>
+					<td>
+						<p><button type="button" class="btn btn-default" onclick="location.href='Part1login.html'">Logout</button></p>
+					</td>
+				</tr>
+			</div>	
+			</table>
+			</div>	
+		</div>	
+	</div>	
+<!-- fim do cabeçalho-->
+
+<!-- row das 2 tabelas-->
+<div class="row">
+		<div class="col-md-1"> </div>
+
+<!--tabela busca de pacientes-->
+<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-heading"> 
+				<table>
+				<tr>
+					<td><h2>Patient Information</h2></td>
+				</tr>
+				
+				</table>
+			</div>
+			<table class="table">
+			<tr>
+				<td><h4>Search button</h4></td>
+			</tr>
+			<tr>
+				<td> <img src="foto.jpg" width="70" height="70"> </td>
+				<td><ul>
+					<h4>
+					<li>Name: </li>
+					<li>Policy: </li>
+					</h4>
+					</ul>
+				</td>
+			</tr>
+			</table>
+		</div>
+</div>
+<!--fim da tabela busca de pacientes-->		
+
+<!--tabela medical reports-->		
+<div class="col-md-7">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h2>Reimbursement Information</h2>
+		</div>
+				<tr>
+				<table border="1" class="table">
+					<td><center><b>Date</b></center></td>
+					<td><center><b>Medical Report ID</b></center></td>
+					<td><center><b>Medical Report Description</b></center></td>
+					<td><center><b>Actual reimbursement</b></center></td>
+					<td><center><b>Status</b></center></td>
+				</tr>
+				<tr>
+					<td>2015-02-19</td>
+					<td>1234</td>
+					<td>X-Ray</td> 
+					<td>6 from 50€</td> 
+					<td><button type="submit" class="btn btn-default">Submit</button></td>
+				</tr>
+				<tr>
+					<td>2015-09-29</td>
+					<td>1345</td>
+					<td>TAC</td> 
+					<td>5 from 10€</td> 
+					<td>Pending</td>
+				</tr>
+				<tr>
+					<td>2015-10-01</td>
+					<td>1456</td>
+					<td>Gesso na cabeca</td> 
+					<td>90 from 100€</td> 
+					<td>Approved</td>
+				</tr>
+				<tr>
+					<td>2015-11-01</td>
+					<td>1567</td>
+					<td>Braço engessado</td> 
+					<td>10 from 30€</td> 
+					<td>Approved</td>
+				</tr>
+				<tr>
+					<td colspan=5><center>Load more button</center></td>
+				</tr>
+				</table>
+
+	</div>
+</div>
+<!--fim da tabela medical reports-->
+				<!--  não sei onde colocar o botão para criar novo medical report (é necessário?)
+				<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-8 text-center">
+					<button type="submit" class="btn btn-default" href="#C4"> New Medical report</button> 					
+				</div>-->
+			</div>		
+</div>	<!--div da row das 2 tabelas-->
+</body>
+
+</html> 
