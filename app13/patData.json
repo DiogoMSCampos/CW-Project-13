@@ -1,8 +1,0 @@
-{ "patientsData": [ 
-
-	{ "patID" : 0, 
-	  "name" : "Carolina Santos", 
-	  "policy_number": 1000, 
-	  "policy_type": 3  } ]
-
-}
