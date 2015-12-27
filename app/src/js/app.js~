@@ -1,0 +1,16 @@
+/* globals bl */
+
+var app = angular.module('InSureApp',[]);
+
+app.controller('defaultCtrl', function($scope, $http){
+
+	$scope.first=true;
+	$scope.second=false;
+	$scope.third=false;
+
+	$scope.GoPage2 = function (){
+		$scope.first=false;
+	        $scope.third=false;
+		$scope.second=true; }
+
+	});

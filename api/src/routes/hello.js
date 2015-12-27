@@ -10,7 +10,38 @@ server.route({
 server.route({
   method: 'POST',
   path: '/hello',
-  handler: resources.hello.post // é definido no outro ficheiro
+  handler: resources.hello.post
 })
 
-//caminha entre a DB e a interface
+server.route({
+  method: 'POST',
+  path: '/login',
+  handler: resources.hello.login
+})
+
+server.route({
+  method: 'GET',
+  path: '/acts',
+  handler: resources.hello.acts
+})
+
+server.route({
+  method: 'GET',
+  path: '/patients',
+  handler: resources.hello.patients
+})
+
+server.route({
+  method: 'GET',
+  path: '/statusP',
+  handler: resources.hello.statusP
+})
+
+server.route({
+  method: 'POST',
+  path: '/actsforPat',
+  handler: resources.hello.actsforPat
+})
+
+
+

@@ -10,4 +10,24 @@ exports.post = function handler (request, reply) {
   reply(bl.sayHello(request.payload.name))
 }
 
-//criar um handler por cada objecto/rota/ceninha da outra pasta!!
+exports.login = function handler (request, reply) {
+  reply(bl.login(request.payload.usr,request.payload.password))
+}
+
+exports.patients = function handler (request, reply) {
+  reply(bl.patients())
+}
+
+exports.acts = function handler (request, reply) {
+  reply(bl.acts())
+}
+
+exports.statusP = function handler (request, reply) {
+  reply(bl.statusP())
+}
+
+exports.actsforPat = function handler (request,reply){
+  reply(bl.actsforPat(request.payload.patientID,request.payload.policyType))
+}
+
+
