@@ -4,9 +4,8 @@
 	<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
 		<meta name="Group" content="WC project">
 		
-		<title>MedicalSystem_app</title>
+		<title>MedicalSystem</title>
 		
-		<!-- ver para o que isto serve ?? -->
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<script src ="cwApp.js"></script>
 		
@@ -22,10 +21,10 @@
 <div ng-app="myApp" ng-controller="customersCtrl">
 <link rel="stylesheet" type="text/css" />
 <!-- cabeçalho-->
-<div class="panel panel-info" >
+	<div class="panel panel-info" >
 		<div class="panel-heading text-center">
-				<div class="row">
-				<div class="col-md-2">
+			<div class="row">
+				<div class="col-md-4 text-center">
 					<table>
 						<tr>
 							<td> <img src="icon1.jpg" class="img-rounded" width="100" height="100"> </td>
@@ -33,29 +32,20 @@
 						</tr> 
 					</table>   
 				</div>
-			<table align="right">
-			<div class="col-md-3" >
-				<tr>
-					<td rowspan="2">
-					<img src="foto.jpg" class="img-rounded" width="100" height="100">
-					</td>
-					<td>
-						<p><h3 class="media-heading" style="float: 0; margin: 10;">Dr. Smith</h3></p>
-					</td>
-					<td>
-						<p><button type="submit" class="btn btn-default">Home</button></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p><h5 class="media-heading" style="float:0; margin:10;">Family/Internal Medicine</h5></p>
-					</td>
-					<td>
-						<p><button type="button" class="btn btn-default" onclick="location.href='Part1login.html'">Logout</button></p>
-					</td>
-				</tr>
-			</div>	
-			</table>
+			
+				<div class="col-md-6">  </div>
+				
+				<div class="col-md-2" >
+				<p></p>
+					<table >
+						<tr>
+							<td> <img src="foto.jpg" width="80" height="80"> </td>
+							<td> <p> <h3 class="media-heading" style="float: 0; margin: 10 ;">  Dr. Smith  </h3> </p>
+								 <p> <h5  class="media-heading" style="float: 0; margin: 10 ;"> Family/Internal Medicine </h5></p></td>
+							<td> <button type="button" class="btn btn-default" onclick="location.href='Part1login.html'">Logout</button></td>
+						</tr>
+					</table>
+				</div>		
 			</div>	
 		</div>	
 	</div>	
@@ -65,19 +55,33 @@
 <div class="row">
 		<div class="col-md-1"> </div>
 
-	<div class="col-md-10">
-		<div class="panel panel-default">
-		<div class="panel-heading"> 
-		<table>
-				<tr>
-					<td><h4>Search for Patient/Medical Act:</h4></td>
-					<td>search text field</td>
-				</tr>
-		</table>
+	    <div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading"> 
+					<table>
+						<tr>
+							<td><h4>Search for Patient:</h4></td>
+							<!-- tem de se alterar pq nao é course_filter, vai ser patient --> 
+							<td><input type="text" style="float: 0; margin: 10;" data-ng-model="course_filter"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
+		<div class="col-md-7">
+			<div class="panel panel-default">
+				<div class="panel-heading"> 
+					<table>
+						<tr>
+							<td><h4>Search for Medical Act: </h4></td>
+							<!-- tem de se alterar pq nao é course_filter, vai ser medical act; nao devia ser medical report ?? --> 
+							<td><input type="text" style="float: 0; margin: 10;" data-ng-model="course_filter"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
 
 <!-- row das 2 tabelas-->
 <div class="row">
@@ -85,40 +89,21 @@
 
 <!--tabela busca de pacientes-->
 <div class="col-md-3">
+		
 		<div class="panel panel-default">
 			<div class="panel-heading"> 
 				<table>
-				<tr>
-					<td><h2>Patient Information</h2></td>
-				</tr>
-				
+					<tr>
+						<td><h3>Patient Information</h3></td>
+					</tr>
 				</table>
 			</div>
-			<table class="table">
-			<tr>
-				<td> <img src="foto.jpg" width="70" height="70"> </td>
-				<td><ul>
-					<h4>
-					<li>Name: </li>
-					<li>Age: </li>
-					<li>Policy: </li>
-					<li>Status: </li>
-					</h4>
-					</ul>
-				</td>
-			</tr>
-			<tr>
-				<td> <img src="foto.jpg" width="70" height="70"> </td>
-				<td><ul>
-					<h4>
-					<li>Name: </li>
-					<li>Age: </li>
-					<li>Policy: </li>
-					<li>Status: </li>
-					</h4>
-					</ul>
-				</td>
-			</tr>
+			
+			<table class="table" ng-controller="coursesCtrl">
+				<!-- acho que tem de ser assim, so uma lista de nomes que vai buscar ao ficheiro json, o resto da info vai tar so na pag3 -->
+				<tr data-ng-repeat="c in courses | filter:course_filter | orderBy: 'abbrev'">
+					<td> <button type="button" class="btn btn-link" onclick="location.href='part3.html'"> 
+						{{c.Patient Name}} </button></td></tr>
 			</table>
 		</div>
 </div>
