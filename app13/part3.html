@@ -20,18 +20,6 @@
 	<body> 
 	<div ng-app="InSureApp" data-ng-controller="cwCtrl" ng-init="cwSwitch=false">
 	
-	<!-- botoes para salvar e voltar -->
-	<div class="btn-group" style="float-right;"> 
-		<button type="button" class="btn btn-default">
-			<img src="save.png" class="img-rounded" width="30" height="30"> 
-		</button>
-		
-		<button type="button" class="btn btn-default" onclick="location.href='part2.html'" >
-			<img src="back1.png"  width="30" height="30"> 
-		</button>
-	</div>
-	
-	<p></p>
 	<!-- cabeçalho -->
 	<div class="panel panel-info" >
 				
@@ -55,13 +43,17 @@
 						<tr>
 							<td> <img src="foto.jpg" width="80" height="80"> </td>
 							<td> <p> <h3 class="media-heading" style="float: 0; margin: 10 ;">  Dr. Smith  </h3> </p>
-								<p> <h5  class="media-heading" style="float: 0; margin: 10 ;"> Family/Internal Medicine </h5></p></td>
+								 <p> <h5  class="media-heading" style="float: 0; margin: 10 ;"> Family/Internal Medicine </h5></p></td>
+							<td> <p><button type="button" class="btn btn-default">
+									<img src="save.png" class="img-rounded" width="30" height="30"> </button> </p>
+								 <p><button type="button" class="btn btn-default" onclick="location.href='part2.html'" >
+									<img src="back1.png"  width="30" height="30"> </button></p></td>
 						</tr>
 					</table>
-				</div>	
+				</div>				
 			</div>	
 		</div>	
-	</div>	
+	</div>	<!-- fim cabeçalho -->
 	
 	<p> </p> 
 	
@@ -80,10 +72,9 @@
 					<td> <h2 style="float: 0; margin: 10 ;">Patient Info: </h2> </td>
 				</tr>
 			</table></div>
-					
+				<!-- acho que isto aqui nao vai ser assim -->	
 			<table class="table" ng-controller="patientInfo">
-				<!-- acho que esta tudo bem, o ficheiro json é que nao ta igual ao suposto -->
-							
+											
 				<tr><td><b>Patient ID:</b></td>    <td> {{ patID }} </td></tr>
 				<tr><td><b>Name:</b></td>          <td> {{ name }}</td></tr>
 				<tr><td><b>Policy number:</b></td> <td> {{ policy_number }}</td></tr>
